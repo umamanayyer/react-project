@@ -1,0 +1,48 @@
+.heading {
+  display:inline;
+}
+
+.heading2 {
+  display: inline;
+  position: relative;
+  left: 71%;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color:black;
+  height: 50px;
+  font-size: 19px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-li {
+  display: inline;
+}
+
+.nav-link {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover{
+  background-color:cadetblue;
+}
+
+.table{
+  margin-top: 50px;
+}
+
+th{
+  padding-right: 50px;
+}

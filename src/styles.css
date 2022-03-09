@@ -1,0 +1,25 @@
+.item{
+  height: 100px;
+  width: 100px;
+  background-color: darkgray;
+  margin: 5px;
+}
+
+.container{
+  background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart{
+  height: 100px;
+  width: 441px;
+  /* background-color: lightblue; */
+  border-left: 1px solid black;
+}
+
+
+.cart-root{
+  position: absolute;
+  left: 1397px;
+}
