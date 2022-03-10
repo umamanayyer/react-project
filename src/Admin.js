@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Product } from "./";
 
@@ -15,22 +15,31 @@ function Admin() {
     let newItem = { itemName: name, itemPrice: price };
     let newArray = items.concat(newItem);
     setItems(newArray);
+    // <Product listOfItems={items} />
   }
 
+  useEffect(() => {
+    <Product listOfItems={items} />
+  }, [items]
+  );
+
+  // items is not updating at updateHandler
   function updateItemHandler(i) {
     items.map(item => {
       if (item === i) {
-        console.log(item)
+        // console.log(item)
+        // console.log("current item of state in loop", items)
         item.itemName = itemNameToUpdate;
         item.itemPrice = itemPriceToUpdate;
-        console.log("item.itemName", item.itemName);
-        console.log("item.itemPrice", item.itemPrice)
+        // console.log("item.itemName in update method", item.itemName);
+        // console.log("item.itemPrice in update method", item.itemPrice)
       }
     }
     )
     setDisplayUpdation(false);
   }
 
+  // console.log("out of update method", items)
   function removeItem(i) {
     const newItemList = items.filter(item => item !== i);
     setItems(newItemList);
@@ -40,7 +49,7 @@ function Admin() {
     setDisplayUpdation(true);
     // removeItem(i)
     setPassCurrentData(i);
-    console.log("update item that is:", i)
+    // console.log("update item that is:", i)
     setItemNameToUpdate(i.itemName)
     setItemPriceToUpdate(i.itemPrice)
   }
