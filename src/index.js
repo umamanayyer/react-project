@@ -1,24 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {
-  Navigation,
-  Product,
-  Admin,
-} from "./";
+import App from "./App";
 
 ReactDOM.render(
-  <Router>
-    <Navigation />
-    <Routes>
-      <Route path="/" element={<Product />} />
-      <Route path="/admin" element={<Admin />} />
-    </Routes>
-  </Router>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 );
-
-export { default as Navigation } from "./Navigation";
-export { default as Product } from "./Product";
-export { default as Admin } from "./Admin";
-
