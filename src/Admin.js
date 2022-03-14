@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Product } from "./";
+import App from "./App";
 
-function Admin() {
+function Admin({ sendDatatoParent }) {
+
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [items, setItems] = useState([])
@@ -17,14 +18,15 @@ function Admin() {
     setItems(newArray);
   }
 
+  useEffect(() => {
+    sendDatatoParent(items)
+  }, [items]);
+
   function updateItemHandler(i) {
     items.map(item => {
       if (item === i) {
-        console.log(item)
         item.itemName = itemNameToUpdate;
         item.itemPrice = itemPriceToUpdate;
-        console.log("item.itemName", item.itemName);
-        console.log("item.itemPrice", item.itemPrice)
       }
     }
     )
@@ -38,9 +40,7 @@ function Admin() {
 
   function setUpdateForm(i) {
     setDisplayUpdation(true);
-    // removeItem(i)
     setPassCurrentData(i);
-    console.log("update item that is:", i)
     setItemNameToUpdate(i.itemName)
     setItemPriceToUpdate(i.itemPrice)
   }
