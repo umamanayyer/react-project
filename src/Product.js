@@ -19,20 +19,15 @@ function Product({ itemsFromApp }) {
 
   function sum(cart) {
     const total = cart.reduce(
-      (prevValue, currentValue) => prevValue + currentValue.cartItemPrice,
+      (prevValue, currentValue) => parseInt(prevValue) + parseInt(currentValue.cartItemPrice),
       0
     );
-    // let total2 = 0;
-    // for (let i = 0; i < cart.length; i++) {
-    //   total2 = (total2) + (cart[i].cartItemPrice);
-    //   console.log("in loop checking price", total2)
-    // }
     return <p>Total Price: {total}</p>;
   }
 
   function renderItems() {
     return (
-      <div style={{ display: "flex", marginRight: "200px", backgroundColor: "antiquewhite", width: "1200px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", marginRight: "200px", width: "1200px" }}>
         {stockItems.map((i) =>
           <div
             key={i}
@@ -53,7 +48,7 @@ function Product({ itemsFromApp }) {
 
   function renderCart() {
     return (
-      <div style={{ width: "500px", height: "500px", backgroundColor: "aquamarine" }}>
+      <div style={{ width: "500px", height: "500px" }}>
         <h2> Cart Items </h2>
         <ul>
           {cartItems.map((item) => {
