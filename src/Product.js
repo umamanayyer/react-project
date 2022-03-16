@@ -46,6 +46,12 @@ const useStyles = makeStyles({
   itemContainer: {
     marginTop: "44px",
     marginLeft: "50px",
+  },
+  container: {
+    display: "flex",
+    height: "100%",
+    width: "100%",
+    marginTop: "66px"
   }
 })
 
@@ -210,7 +216,7 @@ function Product({ itemsFromApp }) {
                 size="small"
                 onClick={() => toggleTotalPart()}
               >
-                Clear all
+                Discard All
               </Button>
             </Grid>
           </Grid>
@@ -220,10 +226,10 @@ function Product({ itemsFromApp }) {
   }
 
   return (
-    <div style={{ display: "flex", height: "100%", width: "100%", marginTop: "66px" }}>
+    <Grid className={classes.container}>
       {renderItems()}
       {renderCart()}
-    </div>
+    </Grid>
   );
 }
 
