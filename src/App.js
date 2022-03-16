@@ -8,7 +8,6 @@ function App() {
   const [items, setItems] = useState([])
 
   const sendDatatoParent = (index) => {
-    // console.log("its the callback function's data", index)
     setItems(index);
   }
   return (

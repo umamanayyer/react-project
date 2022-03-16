@@ -46,7 +46,7 @@ function Admin({ sendDatatoParent }) {
   }
 
   return (
-    < div >
+    <div style={{ marginTop: "85px" }} >
       <h2>Admin Page</h2>
       <label>Item Name: </label>
       <input

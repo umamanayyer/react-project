@@ -3,7 +3,6 @@ import "./App.css";
 
 function Product({ itemsFromApp }) {
 
-  let itemsList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   const [stockItems, setStockItems] = useState([])
   const [cartItems, setCartItems] = useState([])
 
@@ -65,7 +64,7 @@ function Product({ itemsFromApp }) {
   }
 
   return (
-    <div style={{ display: "flex", height: "100%", width: "100%" }}>
+    <div style={{ display: "flex", height: "100%", width: "100%", marginTop: "66px" }}>
       {renderItems()}
       {renderCart()}
     </div>
